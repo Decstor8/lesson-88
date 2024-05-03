@@ -7,8 +7,7 @@ const postsRouter = Router();
 
 postsRouter.get('/', async (_req, res, next) => {
     try {
-        const posts = await Post.find().sort({datetime: -1});
-
+        const posts = await Post.find().sort({datetime: -1}).populate('user', 'username');
         res.send(posts);
     } catch (err) {
         next(err);
