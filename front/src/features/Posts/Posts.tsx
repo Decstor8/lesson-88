@@ -44,7 +44,7 @@ const Posts = () => {
                                     <Typography variant="h5" component="div">
                                         {elem.user.username}
                                     </Typography>
-                                    <LinkRouter to={`/${elem._id}`}>{elem.title}</LinkRouter>
+                                    <LinkRouter to={`/post/${elem._id}`}>{elem.title}</LinkRouter>
                                 </Typography>
                             </CardContent>
                         </Card>

@@ -79,7 +79,7 @@ const Comments = () => {
                                     sx={{
                                         width: '30%',
                                         border: '1px solid #000',
-                                        paddingTop: '30%' // Поддерживаем пропорциональное заполнение (можно убрать если нужно)
+                                        paddingTop: '30%'
                                     }}
                                     image={`http://localhost:8000/${post.image}`}
                                 />
