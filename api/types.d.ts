@@ -7,6 +7,7 @@ export interface UserTypes {
 }
 
 export interface PostTypes {
+    user: string;
     title: string;
     description: string;
     image: string | null;
