@@ -52,3 +52,18 @@ export interface NewPost {
     image: file | null;
     token: string;
 }
+
+export interface CommentsTypes {
+    _id: string;
+    user: {
+        username: string;
+    };
+    post: string;
+    textComment: string;
+}
+
+export interface CommentsPost {
+    post: string;
+    textComment: string;
+    token: string;
+}

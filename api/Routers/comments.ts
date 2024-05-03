@@ -7,7 +7,7 @@ const commentsRouter = Router();
 commentsRouter.get('/', async (req, res, next) => {
     try {
         const postId = req.query.post as string;
-        const result = await Comment.find({post: postId});
+        const result = await Comment.find({post: postId}).populate('user', 'username');
         return res.send(result);
     } catch (err) {
         next(err);

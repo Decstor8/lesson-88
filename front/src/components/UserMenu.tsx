@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {UserTypes} from '../types';
 import {Button, Menu, MenuItem} from '@mui/material';
 import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../App/hooks";
+import {logout} from "../features/Users/userThunks";
 
 interface Props {
     user: UserTypes;
@@ -10,6 +12,7 @@ interface Props {
 const UserMenu: React.FC<Props> = ({user}) => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -22,6 +25,10 @@ const UserMenu: React.FC<Props> = ({user}) => {
         navigate('/new');
     };
 
+    const handleLogout = () => {
+        dispatch(logout());
+    };
+
     return (
         <>
             <Button color="inherit" onClick={handleClick}>
@@ -29,7 +36,7 @@ const UserMenu: React.FC<Props> = ({user}) => {
             </Button>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose} keepMounted>
                 <MenuItem onClick={postNavigate}>Создать новый пост</MenuItem>
-                <MenuItem>Выйти</MenuItem>
+                <MenuItem onClick={handleLogout}>Выйти</MenuItem>
             </Menu>
         </>
     );
