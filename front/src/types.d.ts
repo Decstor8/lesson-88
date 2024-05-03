@@ -45,3 +45,10 @@ export interface PostsTypes {
     image: string | null;
     datetime: string;
 }
+
+export interface NewPost {
+    title: string;
+    description: string;
+    image: file | null;
+    token: string;
+}
