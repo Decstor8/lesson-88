@@ -1,6 +1,5 @@
 import {Router} from "express";
 import Post from "../models/Post";
-import {PostTypes} from "../types";
 import {imageUpload} from "../multer";
 import auth, {RequestWithUser} from "../middleware/auth";
 
@@ -8,7 +7,7 @@ const postsRouter = Router();
 
 postsRouter.get('/', async (_req, res, next) => {
     try {
-        const posts = await Post.find().sort({datetime: -1});;
+        const posts = await Post.find().sort({datetime: -1});
 
         res.send(posts);
     } catch (err) {

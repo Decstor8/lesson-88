@@ -34,5 +34,5 @@ const CommentSchema = new Schema({
     }
 });
 
-const Comment = model('Комментарий: ', CommentSchema);
+const Comment = model('comment: ', CommentSchema);
 export default Comment;
