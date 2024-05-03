@@ -6,6 +6,12 @@ export interface UserTypes {
     token: string;
 }
 
+export interface PostTypes {
+    title: string;
+    description: string;
+    image: string | null;
+    }
+
 interface UserMethods {
     checkPassword(password: string): Promise<boolean>;
     generateToken(): void;
